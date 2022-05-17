@@ -454,7 +454,10 @@ func (driver AliDrive) Upload(file *middlewares.FileStream) (map[string]interfac
 	}
 
 	for _, partInfo := range resp.PartInfoList {
-		req, err := http.NewRequest("PUT", partInfo.UploadUrl, io.LimitReader(file.File, DEFAULT))
+		req, err := http.NewRequest(
+			"PUT",
+			partInfo.UploadUrl,
+			io.LimitReader(file.File, DEFAULT))
 		if err != nil {
 			return base.Json{}, err
 		}
