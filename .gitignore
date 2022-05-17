@@ -1,8 +1,8 @@
 .DS_Store
-.idea/
 config/app.ini
 main
 queue
+runtime
 # Editor directories and files
 .idea
 .vscode
